@@ -63,9 +63,7 @@ export function lastTodoTitle(todos) {
  * @param {Todo[]} todos
  */
 export function exportTitles(todos) {
-  console.log("export");
   const titles = todos.map(function (todo) {
-    console.log(todo.todoTitle);
     return todo.todoTitle;
   });
   return titles;

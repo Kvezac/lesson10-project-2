@@ -21,7 +21,7 @@ function render(todos) {
   todos.forEach(function (todo) {
     list.insertAdjacentHTML(
       "beforeend",
-      `<li><div class="card">${todo.icon} &nbsp;<strong>${todo.todoTitle}</strong> - by ${todo.user.first} ${todo.user.last}</strong> in ${todo.category}</div></li>`
+      `<li><div class="card">${todo.icon} &nbsp;<strong>${todo.todoTitle}</strong> - by ${todo.user.first} ${todo.user.last}</strong> in ${todo.chosenCategory}</div></li>`
     );
   });
 }
@@ -42,6 +42,7 @@ form.addEventListener("submit", (event) => {
   };
   let todo = createTodo(values);
   todos = addTodo(todos, todo);
+  // console.dir(todo);
   render(todos);
   //reset form
   title.value = "";
